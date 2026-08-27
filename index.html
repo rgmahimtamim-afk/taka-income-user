@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Taka Income</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div><div class="brand">Taka Income</div><div id="hello" class="muted">Telegram Mini App</div></div>
+    <div class="avatar" id="avatar">T</div>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="balance-card">
+        <div class="muted light">Available Balance</div>
+        <div class="balance">৳ <span id="balance">0.00</span></div>
+        <div class="stats"><span>Ads: <b id="adsWatched">0</b></span><span>Tasks: <b id="tasksDone">0</b></span></div>
+      </div>
+      <div class="notice" id="notice"><b>Notice</b><p id="noticeText">Welcome to Taka Income.</p></div>
+      <button class="primary" id="watchAdBtn">▶ Watch Rewarded Ad</button>
+      <p class="small">Rewards are credited only after the server confirms a valid completed ad session.</p>
+    </section>
+
+    <section id="tasks" class="page">
+      <h2>Tasks</h2>
+      <div id="taskList" class="list"><div class="empty">Tasks will appear here.</div></div>
+    </section>
+
+    <section id="referral" class="page">
+      <h2>Referral</h2>
+      <div class="card"><div class="muted">Your referral link</div><div id="refLink" class="code">Loading…</div><button class="secondary" id="copyRef">Copy link</button></div>
+      <div class="card"><div>Referrals</div><strong id="refCount">0</strong></div>
+      <div class="card"><div>Referral earnings</div><strong>৳ <span id="refEarn">0.00</span></strong></div>
+    </section>
+
+    <section id="withdraw" class="page">
+      <h2>Withdraw</h2>
+      <div class="card"><div class="muted">Minimum withdrawal</div><strong>৳ <span id="minWithdraw">150</span></strong></div>
+      <label>Amount<input id="withdrawAmount" type="number" min="0" step="0.01" placeholder="Enter amount"></label>
+      <label>Method<select id="withdrawMethod"><option value="">Select method</option></select></label>
+      <label>Account / Number<input id="withdrawAccount" type="text" placeholder="bKash/Nagad/other account"></label>
+      <button class="primary" id="withdrawBtn">Request Withdrawal</button>
+      <p class="small">Withdrawal requests are reviewed according to the rules shown in the app.</p>
+    </section>
+
+    <section id="profile" class="page">
+      <h2>Profile</h2>
+      <div class="card row"><span>Telegram ID</span><b id="tgId">—</b></div>
+      <div class="card row"><span>Name</span><b id="tgName">—</b></div>
+      <div class="card row"><span>Username</span><b id="tgUsername">—</b></div>
+      <div class="card row"><span>Ads watched</span><b id="profileAds">0</b></div>
+      <div class="card row"><span>Balance</span><b>৳ <span id="profileBalance">0.00</span></b></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="home" class="nav active">⌂<span>Home</span></button>
+    <button data-page="tasks" class="nav">✓<span>Tasks</span></button>
+    <button data-page="referral" class="nav">↗<span>Referral</span></button>
+    <button data-page="withdraw" class="nav">৳<span>Withdraw</span></button>
+    <button data-page="profile" class="nav">●<span>Profile</span></button>
+  </nav>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
